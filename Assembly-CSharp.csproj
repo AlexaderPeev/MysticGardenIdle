@@ -60,8 +60,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.52f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Upgrades.cs" />
+    <Compile Include="Assets\Scripts\UpgradesManager.cs" />
+    <Compile Include="Assets\Scripts\JsonDatabase.cs" />
     <Compile Include="Assets\Scripts\BigDoubleEditor.cs" />
     <Compile Include="Assets\Scripts\Data.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\BigDouble.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
   </ItemGroup>
