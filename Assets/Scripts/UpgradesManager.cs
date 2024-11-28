@@ -39,6 +39,8 @@ public class UpgradesManager : MonoBehaviour
         }
         ClickUpgradesScroll.normalizedPosition = new Vector2(0, 0);
         UpdateClickUpgradeUI();
+
+        Methods.UpgradeCheck(ref Controller.instance.data.ClickUpgradeLevel, 3);
     }
 
 
