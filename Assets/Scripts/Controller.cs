@@ -1,10 +1,16 @@
 using UnityEngine;
 using TMPro;
 using BreakInfinity;
+using System;
 
 public class Controller : MonoBehaviour
 {
-    public UpgradesManager upgradesManager;
+    public static Controller instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public Data data;
 
     [SerializeField] public TMP_Text leavesText;
@@ -13,12 +19,18 @@ public class Controller : MonoBehaviour
 
     public BigDouble ClickPower()
     {
-        return 1 + data.ClickUpgradeLevel;
+        BigDouble total = 1;
+        for(int i = 0; i < data.ClickUpgradeLevel.Count; i++)
+        {
+            total += UpgradesManager.instance.ClickUpgradesBasePower[i] * data.ClickUpgradeLevel[i];
+        }
+
+        return total;
     }
     private void Start()
     {
         data = new Data();
-        upgradesManager.StartUpgradeManager();
+        UpgradesManager.instance.StartUpgradeManager();
     }
 
     private void Update()
@@ -30,5 +42,10 @@ public class Controller : MonoBehaviour
     public void GenerateLeaves()
     {
         data.leaves += ClickPower();
+    }
+
+    public static implicit operator Controller(UpgradesManager v)
+    {
+        throw new NotImplementedException();
     }
 }
