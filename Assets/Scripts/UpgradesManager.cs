@@ -62,7 +62,7 @@ public class UpgradesManager : MonoBehaviour
         void UpdateUI(int ID)
         {
             ClickUpgrades[ID].LevelText.text = data.ClickUpgradeLevel[ID].ToString();
-            ClickUpgrades[ID].CostText.text = $"Cost: {ClickUpgradeCost(ID):F2} Leaves";
+            ClickUpgrades[ID].CostText.text = $"Cost: {ClickUpgradeCost(ID):F0} Leaves";
             ClickUpgrades[ID].NameText.text = ClickUpgradeNames[ID];
         }
     }

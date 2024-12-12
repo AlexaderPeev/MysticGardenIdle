@@ -36,7 +36,7 @@ public class Controller : MonoBehaviour
     private void Update()
     {
         LeavesClickPowerText.text = "+" + ClickPower() + " Leaves";
-        leavesText.text = data.leaves + " Leaves";
+        leavesText.text = $"{data.leaves:F0} Leaves";
     }
 
     public void GenerateLeaves()
