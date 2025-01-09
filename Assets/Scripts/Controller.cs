@@ -14,7 +14,7 @@ public class Controller : MonoBehaviour
     public Data data;
 
     [SerializeField] public TMP_Text leavesText;
-
+    [SerializeField] private TMP_Text LeavesPerSecondText;
     [SerializeField] private TMP_Text LeavesClickPowerText;
 
     public BigDouble ClickPower()
@@ -23,6 +23,17 @@ public class Controller : MonoBehaviour
         for(int i = 0; i < data.ClickUpgradeLevel.Count; i++)
         {
             total += UpgradesManager.instance.ClickUpgradesBasePower[i] * data.ClickUpgradeLevel[i];
+        }
+
+        return total;
+    }
+
+    public BigDouble LeavesPerSecond()
+    {
+        BigDouble total = 0;
+        for (int i = 0; i < data.ProductionUpgradeLevel.Count; i++)
+        {
+            total += UpgradesManager.instance.ProductionUpgradesBasePower[i] * data.ProductionUpgradeLevel[i];
         }
 
         return total;
@@ -36,7 +47,10 @@ public class Controller : MonoBehaviour
     private void Update()
     {
         LeavesClickPowerText.text = "+" + ClickPower() + " Leaves";
+        LeavesPerSecondText.text = $"{LeavesPerSecond():F2}/s";
         leavesText.text = $"{data.leaves:F0} Leaves";
+
+        data.leaves += LeavesPerSecond() * Time.deltaTime;
     }
 
     public void GenerateLeaves()
