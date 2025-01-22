@@ -2,6 +2,9 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using BreakInfinity;
+using System;
+
+[Serializable]
 public class Data
 {
     public BigDouble leaves;

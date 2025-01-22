@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Data.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\BigDouble.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
   </ItemGroup>
   <ItemGroup>

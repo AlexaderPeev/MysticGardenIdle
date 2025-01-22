@@ -1471,9 +1471,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7c8a5c0859f864e973b0d0eff747a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    leaves:
+      mantissa: 0
+      exponent: 0
+    ClickUpgradeLevel: 00000000000000000000000000000000
+    ProductionUpgradeLevel: 00000000000000000000000000000000
   leavesText: {fileID: 455068996}
   LeavesPerSecondText: {fileID: 1902007038}
   LeavesClickPowerText: {fileID: 201643770}
+  SaveTime: 0
 --- !u!4 &1166231305
 Transform:
   m_ObjectHideFlags: 0

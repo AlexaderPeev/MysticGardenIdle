@@ -38,12 +38,14 @@ public class Controller : MonoBehaviour
 
         return total;
     }
+    private const string dataFileName = "PlayerData";
     private void Start()
     {
-        data = new Data();
+        data = SaveSystem.SaveExists(dataFileName) ? SaveSystem.LoadData<Data>(dataFileName) : new Data();
         UpgradesManager.instance.StartUpgradeManager();
     }
 
+    public float SaveTime;
     private void Update()
     {
         LeavesClickPowerText.text = "+" + ClickPower() + " Leaves";
@@ -51,6 +53,13 @@ public class Controller : MonoBehaviour
         leavesText.text = $"{data.leaves:F0} Leaves";
 
         data.leaves += LeavesPerSecond() * Time.deltaTime;
+
+        SaveTime += Time.deltaTime * (1 / Time.timeScale);
+        if(SaveTime >= 15)
+        {
+            SaveSystem.SaveData(data, dataFileName);
+            SaveTime = 0;
+        }
     }
 
     public void GenerateLeaves()
