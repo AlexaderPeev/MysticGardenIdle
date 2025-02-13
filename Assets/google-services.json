@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "857270340068",
+    "project_id": "database-7b498",
+    "storage_bucket": "database-7b498.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857270340068:android:a1f057fb47fd7d23b7dff1",
+        "android_client_info": {
+          "package_name": "com.GameStudio.MysticGardenIdle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0sJvyVl8otwBewnySqpaOO6siaRLEWCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
